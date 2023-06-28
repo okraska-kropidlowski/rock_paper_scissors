@@ -1,2 +1,3 @@
 # rock_paper_scissors
-Basic Rock-Paper-Scissors game
+Classic Rock-Paper-Scissors game.
+For now only basic features and no GUI - improvements will come with time.
