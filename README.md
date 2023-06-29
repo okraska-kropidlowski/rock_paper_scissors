@@ -1,3 +1,5 @@
 # rock_paper_scissors
-Classic Rock-Paper-Scissors game.
-For now only basic features and no GUI - improvements will come with time.
+Classic Rock-Paper-Scissors game.  
+You can play multiple rounds game and see the results summary at the end.  
+
+  **Enjoy!**
