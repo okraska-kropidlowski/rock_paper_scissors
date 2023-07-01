@@ -35,7 +35,7 @@ for widget in user_gesture_ui.winfo_children():
 cpu_gesture_ui = tkinter.LabelFrame(frame, text="CPU gesture:", font=("Arial", 12))
 cpu_gesture_ui.grid(row=1, column=0, padx=20, pady=20)
 
-cpu_choice_ui = tkinter.Label(cpu_gesture_ui, text="PH", font=("Arial", 50))
+cpu_choice_ui = tkinter.Label(cpu_gesture_ui, text="", font=("Arial", 50))
 cpu_choice_ui.grid(row=1, column=0, padx=10, pady=10)
 
 window.mainloop()
