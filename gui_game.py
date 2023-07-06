@@ -15,8 +15,9 @@ attack = "TEST"
 
 def user_move(gesture):
     global attack
+    global defense
     attack = gesture
-    result_ui.config(text=attack)
+    result_ui.config(text=attack+defense)
 
 def cpu_move():
     global defense
@@ -27,11 +28,11 @@ def cpu_move():
 user_gesture_ui = tkinter.LabelFrame(frame, text="Choose your gesture:")
 user_gesture_ui.grid(row=0)
 
-rock_button = tkinter.Button(user_gesture_ui, text="✊", command=lambda: [user_move("✊"), cpu_move()])
+rock_button = tkinter.Button(user_gesture_ui, text="✊", command=lambda: [cpu_move(), user_move("✊")])
 rock_button.grid(column=0)
-paper_button = tkinter.Button(user_gesture_ui, text="✋", command=lambda: [user_move("✋"), cpu_move()])
+paper_button = tkinter.Button(user_gesture_ui, text="✋", command=lambda: [cpu_move(), user_move("✋")])
 paper_button.grid(column=1)
-scissors_button = tkinter.Button(user_gesture_ui, text="✌️", command=lambda: [user_move("✌️"), cpu_move()])
+scissors_button = tkinter.Button(user_gesture_ui, text="✌️", command=lambda: [cpu_move(), user_move("✌️")])
 scissors_button.grid(column=2)
 
 round_result_ui = tkinter.LabelFrame(frame, text="Round result:")
