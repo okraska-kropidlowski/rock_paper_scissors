@@ -11,7 +11,12 @@ frame.pack()
 
 defense = ""
 cpu_choice = ["✊", "✋", "✌️"]
-result = ""
+attack = "TEST"
+
+def user_move(gesture):
+    global attack
+    attack = gesture
+    result_ui.config(text=attack)
 
 def cpu_move():
     global defense
@@ -22,17 +27,17 @@ def cpu_move():
 user_gesture_ui = tkinter.LabelFrame(frame, text="Choose your gesture:")
 user_gesture_ui.grid(row=0)
 
-rock_button = tkinter.Button(user_gesture_ui, text="✊")
+rock_button = tkinter.Button(user_gesture_ui, text="✊", command=lambda: [user_move("✊"), cpu_move()])
 rock_button.grid(column=0)
-paper_button = tkinter.Button(user_gesture_ui, text="✋")
+paper_button = tkinter.Button(user_gesture_ui, text="✋", command=lambda: [user_move("✋"), cpu_move()])
 paper_button.grid(column=1)
-scissors_button = tkinter.Button(user_gesture_ui, text="✌️")
+scissors_button = tkinter.Button(user_gesture_ui, text="✌️", command=lambda: [user_move("✌️"), cpu_move()])
 scissors_button.grid(column=2)
 
 round_result_ui = tkinter.LabelFrame(frame, text="Round result:")
 round_result_ui.grid(row=1)
 
-result_ui = tkinter.Label(round_result_ui, text=result)
+result_ui = tkinter.Label(round_result_ui, text=attack)
 result_ui.grid(column=0)
 
 cpu_gesture_ui = tkinter.LabelFrame(frame, text="CPU gesture:")
@@ -47,7 +52,7 @@ for widget_labelframe in frame.winfo_children():
 
 for widget_button in user_gesture_ui.winfo_children():
     widget_button.grid_configure(row=0, padx=10, pady=10)
-    widget_button.config(font=("Arial", 50), highlightthickness=0, bd=0, command=cpu_move)
+    widget_button.config(font=("Arial", 50), highlightthickness=0, bd=0)#, command=cpu_move)
 
 for widget_label_result in round_result_ui.winfo_children():
     widget_label_result.grid_configure(row=1, padx=20, pady=20)
