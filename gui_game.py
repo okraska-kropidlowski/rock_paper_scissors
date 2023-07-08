@@ -28,32 +28,32 @@ def cpu_move():
 def evaluation():
     if attack == "✊":
         if defense == "✊": 
-            result_ui.config(text="We have a draw...")
+            result_ui.config(text="DRAW")
         if defense == "✋":
-            result_ui.config(text="I won!")
+            result_ui.config(text="YOU LOSE")
             #cpu_wins +=1
         if defense == "✌️":
-            result_ui.config(text="You won... THIS TIME!")
+            result_ui.config(text="YOU WIN")
             #user_wins += 1
 
     if attack == "✋":
         if defense == "✋": 
-            result_ui.config(text="We have a draw...")
+            result_ui.config(text="DRAW")
         if defense == "✌️":
-            result_ui.config(text="I won!")
+            result_ui.config(text="YOU LOSE")
             #cpu_wins += 1
         if defense == "✊":
-            result_ui.config(text="You won... THIS TIME!")
+            result_ui.config(text="YOU WIN")
             #user_wins += 1
 
     if attack == "✌️":
         if defense == "✌️": 
-            result_ui.config(text="We have a draw...")
+            result_ui.config(text="DRAW")
         if defense == "✊":
-            result_ui.config(text="I won!")
+            result_ui.config(text="YOU LOSE")
             #cpu_wins += 1
         if defense == "✋":
-            result_ui.config(text="You won... THIS TIME!")
+            result_ui.config(text="YOU WIN")
             #user_wins += 1
 
 user_gesture_ui = tkinter.LabelFrame(frame, text="Choose your gesture:")
@@ -88,7 +88,7 @@ for widget_button in user_gesture_ui.winfo_children():
 
 for widget_label_result in round_result_ui.winfo_children():
     widget_label_result.grid_configure(row=1, padx=20, pady=20)
-    widget_label_result.config(font=("Arial", 12), width=10, justify='center')
+    widget_label_result.config(font=("Arial", 50), width=10, justify='center')
 
 for widget_label_cpu in cpu_gesture_ui.winfo_children():
     widget_label_cpu.grid_configure(row=1, padx=20, pady=20)
